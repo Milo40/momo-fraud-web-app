@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Chatbox",
   description: "A chat interface",
-  generator: "v0.dev",
+  generator: "",
 };
 
 export default function RootLayout({
