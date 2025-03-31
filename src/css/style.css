@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme inline {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #171717;
+    --foreground: #f5f5f5; */
+    --background: #f5f5f5;
+    --foreground: #171717;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f5f5f5;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .prose {
+    max-width: 65ch;
+    color: hsl(var(--foreground));
+  }
+
+  .prose a {
+    color: hsl(215, 100%, 50%);
+    text-decoration: underline;
+  }
+
+  .prose strong {
+    font-weight: 600;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+  }
+
+  .prose h1 {
+    font-size: 1.5em;
+  }
+
+  .prose h2 {
+    font-size: 1.25em;
+  }
+
+  .prose h3 {
+    font-size: 1.125em;
+  }
+
+  .prose ul,
+  .prose ol {
+    padding-left: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose ul {
+    list-style-type: disc;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
+  }
+
+  .prose p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose code {
+    background-color: hsl(var(--muted));
+    padding: 0.2em 0.4em;
+    border-radius: 0.25em;
+    font-size: 0.875em;
+  }
+
+  .prose pre {
+    background-color: hsl(var(--muted));
+    padding: 1em;
+    border-radius: 0.5em;
+    overflow-x: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid hsl(var(--muted-foreground));
+    padding-left: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+  }
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prose hr {
+    border-top: 1px solid hsl(var(--border));
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .prose th,
+  .prose td {
+    padding: 0.5em;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .prose th {
+    background-color: hsl(var(--muted));
+    font-weight: 600;
+  }
+}
